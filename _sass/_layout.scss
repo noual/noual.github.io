@@ -1,0 +1,165 @@
+// ============================================================================
+// Layout Styles
+// ============================================================================
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(20, 20, 19, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  isolation: isolate;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  padding: $spacing-sm 20%;
+  margin-bottom: $spacing-xs;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-md;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.12)), url('/assets/images/Texturelabs_Glass_153XL.jpg');
+    background-size: 110% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    mix-blend-mode: darken;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }.backdrop {
+    position: absolute;
+    inset: 0;
+    height: 200%;
+    backdrop-filter: blur(16px);
+    mask-image: linear-gradient(
+      to bottom,
+      black 0% 50%,
+      transparent 50% 100%
+    );
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    flex: 0 0 auto;
+  }
+
+  nav {
+    margin-top: 0;
+    flex: 1 1 auto;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: $spacing-md;
+
+      a {
+        color: $text-color;
+        font-weight: 500;
+
+        &:hover {
+          color: $accent-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+main {
+  min-height: calc(100vh - 200px);
+  padding: $spacing-lg $spacing-md;
+}
+
+footer {
+  background-color: rgba(20, 20, 19, 1);
+  border-top: 0px solid $border-color;
+  padding: $spacing-lg $spacing-md;
+  margin-top: $spacing-xs;
+  text-align: center;
+  color: $text-color;
+  font-size: 0.9rem;
+}
+
+// Responsive
+@media (max-width: $tablet) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: $spacing-sm 10%;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-sm;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: $mobile) {
+  .container {
+    padding: 0 $spacing-sm;
+  }
+
+  header {
+    padding: $spacing-md $spacing-sm;
+    margin-bottom: $spacing-lg;
+  }
+
+  main {
+    padding: $spacing-md $spacing-sm;
+  }
+
+  footer {
+    padding: $spacing-md $spacing-sm;
+    margin-top: $spacing-lg;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+}

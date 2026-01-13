@@ -4,11 +4,10 @@ title: Home
 ---
 
 ## About Me
-
-I am a Machine Learning Engineer specialising in Deep Reinforcement Learning and Computer Vision. Currently based in London, I focus on building scalable AI solutions.
+My name is Noé Lallouet. I am a researcher in artificial intelligence, specialising in the development of novel learning algorithms for multi-objective optimisation and combinatorial optimisation.
 
 ## Contact
 
-* **Email:** [john.doe@example.com](mailto:john.doe@example.com)
-* **GitHub:** [github.com/johndoe](https://github.com/johndoe)
-* **LinkedIn:** [linkedin.com/in/johndoe](https://linkedin.com/in/johndoe)
+* **Email:** [noe.lallouet@gmail.com](mailto:noe.lallouet@gmail.com)
+* **GitHub:** [github.com/noual](https://github.com/noual)
+* **LinkedIn:** [linkedin.com/in/noe-lallouet](https://linkedin.com/in/noe-lallouet)
