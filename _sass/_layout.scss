@@ -12,15 +12,12 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(20, 20, 19, 0.6);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.47);
+  backdrop-filter: blur(9px);
+-webkit-backdrop-filter: blur(9px);
   isolation: isolate;
   overflow: hidden;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 0px solid rgba(255, 255, 255, 0.04);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   padding: $spacing-sm 20%;
   margin-bottom: $spacing-xs;
@@ -29,33 +26,18 @@ header {
   justify-content: space-between;
   gap: $spacing-md;
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.12)), url('/assets/images/Texturelabs_Glass_153XL.jpg');
-    background-size: 110% auto;
-    background-position: center;
-    background-repeat: no-repeat;
-    mix-blend-mode: darken;
-    opacity: 0.1;
-    pointer-events: none;
-    z-index: 0;
-  }
-
   > * {
     position: relative;
     z-index: 1;
-  }.backdrop {
-    position: absolute;
-    inset: 0;
-    height: 200%;
-    backdrop-filter: blur(16px);
-    mask-image: linear-gradient(
-      to bottom,
-      black 0% 50%,
-      transparent 50% 100%
-    );
+  }
+
+  > div {
+    width: 60%;
+    max-width: 960px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-md;
   }
 
   h1 {
@@ -64,18 +46,29 @@ header {
     line-height: 1.2;
     flex: 0 0 auto;
   }
+  a {
+        color: $text-color;
+
+        &:hover {
+          color: $accent-color;
+          text-decoration: none;
+        }
+      }
 
   nav {
     margin-top: 0;
-    flex: 1 1 auto;
+    flex: 0 0 auto;
 
     ul {
       list-style: none;
       margin: 0;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
       gap: $spacing-md;
+
+      li {
+        margin-bottom: 0;
+      }
 
       a {
         color: $text-color;
@@ -90,8 +83,23 @@ header {
   }
 }
 
+.profile-photo {
+  display: flex;
+  justify-content: center;
+  margin: $spacing-lg 0;
+
+  img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.548);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+}
+
 main {
-  min-height: calc(100vh - 200px);
+  flex: 1;
   padding: $spacing-lg $spacing-md;
 }
 
@@ -110,7 +118,8 @@ footer {
   header {
     flex-direction: column;
     align-items: flex-start;
-    padding: $spacing-sm 10%;
+    justify-content: flex-start;
+    padding: $spacing-sm $spacing-md;
   }
 
   header nav ul {

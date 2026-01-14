@@ -6,8 +6,8 @@ permalink: /cv.html
 ## Education
 
 ### PSL University — Paris, France
-- PhD – Artificial Intelligence
-- March 2023 – February 2026
+###### *March 2023 – February 2026*
+- Ph.D in Artificial Intelligence
 - Joint research agreement between PSL University and Thales under the supervision of Prof. Tristan Cazenave.
 - Research topic: _Optimizing the trade-off between neural network performance and complexity for radar target detection_.
 
@@ -18,9 +18,11 @@ permalink: /cv.html
 - Relevant coursework: Deep learning, NLP, Optimization, Graph mining, Machine learning, etc.
 - Master's thesis: Deep learning applied to radar target detection.
 
+<hr class="cv-sep">
+
 ## Work Experience
 
-### PhD AI Research Scientist — Thales, Elancourt, France
+### Ph.D AI Research Scientist — Thales, Elancourt, France
 - March 2023 – February 2026
 - Responsible for investigating resource-efficient neural network design for the problem of airborne radar target detection.
 - Developed solutions for designing efficient convolutional neural networks in resource-constrained contexts for implementation in operational radar systems.
@@ -38,6 +40,16 @@ permalink: /cv.html
 - Responsible for the development, training and deployment of state‑of‑the‑art deep learning algorithms in object detection, sequence generation, autoencoding, image generation.
 - Raised $60k pre-seed funding for a $1M valuation.
 
+<hr class="cv-sep">
+
+## Publications
+- Noé Lallouet, Tristan Cazenave and Cyrille Enderli. _“Pareto‑NRPA: A Novel Monte‑Carlo Search Algorithm for Multi‑Objective Optimization.”_ ECAI 2025, IOS Press, [https://doi.org/10.3233/faia251394](https://doi.org/10.3233/faia251394).
+- Noé Lallouet, Tristan Cazenave, Cyrille Enderli and Stéphanie Gourdin. _“Searching Efficient Deep Architectures for Radar Target Detection Using Monte‑Carlo Tree Search.”_ 2024 International Radar Conference (RADAR), IEEE, [https://doi.org/10.1109/radar58436.2024.10993743](https://doi.org/10.1109/radar58436.2024.10993743).
+- Noé Lallouet, Tristan Cazenave, Cyrille Enderli and Stéphanie Gourdin. _“Loss Function Design For Training Robust Radar Detectors Using Deep Learning.”_ Conference on Artificial Intelligence for Defense, DGA Maîtrise de l'Information, [https://hal.science/hal-04328554v1](https://hal.science/hal-04328554v1).
+
+
+<hr class="cv-sep">
+
 ## Projects & Awards
 
 ### Winner, Hackmakers Formula AI Hackathon — March 2022
@@ -47,10 +59,8 @@ permalink: /cv.html
 ### Runner‑up, Paris‑Dauphine Startup Challenge — January 2020
 - Award received following the presentation of a sports‑tech startup implementing deep learning solutions in the field of indoor boulder climbing.
 
-## Publications
-- Noé Lallouet, Tristan Cazenave and Cyrille Enderli. _“Pareto‑NRPA: A Novel Monte‑Carlo Search Algorithm for Multi‑Objective Optimization.”_ ECAI 2025, IOS Press, https://doi.org/10.3233/faia251394.
-- Noé Lallouet, Tristan Cazenave, Cyrille Enderli and Stéphanie Gourdin. _“Searching Efficient Deep Architectures for Radar Target Detection Using Monte‑Carlo Tree Search.”_ 2024 International Radar Conference (RADAR), IEEE, https://doi.org/10.1109/radar58436.2024.10993743.
-- Noé Lallouet, Tristan Cazenave, Cyrille Enderli and Stéphanie Gourdin. _“Loss Function Design For Training Robust Radar Detectors Using Deep Learning.”_ Conference on Artificial Intelligence for Defense, DGA Maîtrise de l'Information, https://hal.science/hal-04328554v1.
+
+<hr class="cv-sep">
 
 ## Skills
 - **Languages**:
@@ -61,6 +71,8 @@ permalink: /cv.html
 - **Programming Languages & Frameworks**: Python, NumPy, PyTorch, TensorFlow, SQL, Java, JavaScript
 - **Scientific domains**: Artificial intelligence, machine learning, optimization, probability, graphs, signal processing
 - **Technologies**: GitHub, AWS SageMaker, EC2, S3, Lambda, EFS, ECR
+
+<hr class="cv-sep">
 
 ## Extracurricular Activities
 - **Music**: Jazz piano, music theory, guitar, bass guitar

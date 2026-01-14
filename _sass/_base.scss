@@ -2,6 +2,18 @@
 // Base Styles
 // ============================================================================
 
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@font-face {
+  font-family: 'Ogg';
+  src: url('/assets/fonts/Ogg-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -23,12 +35,15 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  background-blend-mode: lighten;
+  background-blend-mode: screen;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-heading;
-  font-weight: bold;
+  font-weight: 300;
   line-height: 1.2;
   margin-top: $spacing-lg;
   margin-bottom: $spacing-md;
@@ -39,7 +54,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 h3 {
@@ -55,11 +70,13 @@ h5 {
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: 1.25rem;
+  margin-top: $spacing-sm;
+  margin-bottom: $spacing-sm;
 }
 
 p {
-  margin-bottom: $spacing-md;
+  margin-bottom: $spacing-sm;
 }
 
 a {
@@ -76,7 +93,7 @@ ul, ol {
   margin-bottom: $spacing-md;
 
   li {
-    margin-bottom: $spacing-sm;
+    margin-bottom: $spacing-xs;
   }
 }
 
@@ -135,4 +152,11 @@ table {
   tr:hover {
     background-color: rgba(0, 0, 0, 0.02);
   }
+}
+
+.cv-sep {
+  border: 0;
+  border-top: 1px solid $text-color;
+  margin: 2rem 0;
+  width: 70%;
 }
