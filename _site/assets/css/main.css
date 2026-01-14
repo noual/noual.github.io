@@ -21,13 +21,8 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #e0e0e0;
-  background-color: #161615;
-  background-image: url("/assets/images/Texturelabs_LensFX_172XL.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: screen;
+  color: #333333;
+  background-color: hsl(54, 85%, 97%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -42,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 h2 {
@@ -72,7 +67,7 @@ p {
 }
 
 a {
-  color: #66a1ce;
+  color: #e35336;
   text-decoration: none;
 }
 a:hover {
@@ -109,7 +104,7 @@ pre code {
 }
 
 blockquote {
-  border-left: 4px solid #66a1ce;
+  border-left: 4px solid #e35336;
   padding-left: 1.5rem;
   margin: 1.5rem 0;
   color: #666666;
@@ -142,7 +137,7 @@ table tr:hover {
 
 .cv-sep {
   border: 0;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #333333;
   margin: 2rem 0;
   width: 70%;
 }
@@ -157,13 +152,13 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.47);
+  background: rgb(242, 241, 229);
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
   isolation: isolate;
   overflow: hidden;
   border-bottom: 0px solid rgba(255, 255, 255, 0.04);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
   padding: 1rem 20%;
   margin-bottom: 0.5rem;
   display: flex;
@@ -190,10 +185,10 @@ header h1 {
   flex: 0 0 auto;
 }
 header a {
-  color: #e0e0e0;
+  color: #333333;
 }
 header a:hover {
-  color: #66a1ce;
+  color: #e35336;
   text-decoration: none;
 }
 header nav {
@@ -211,11 +206,11 @@ header nav ul li {
   margin-bottom: 0;
 }
 header nav ul a {
-  color: #e0e0e0;
+  color: #333333;
   font-weight: 500;
 }
 header nav ul a:hover {
-  color: #66a1ce;
+  color: #e35336;
   text-decoration: none;
 }
 
@@ -244,7 +239,7 @@ footer {
   padding: 2rem 1.5rem;
   margin-top: 0.5rem;
   text-align: center;
-  color: #e0e0e0;
+  color: #333333;
   font-size: 0.9rem;
 }
 

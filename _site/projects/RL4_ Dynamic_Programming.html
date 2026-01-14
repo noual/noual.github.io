@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RL4: Dynamic Programming | Noé Lallouet</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1><a href="/">Noé Lallouet</a></h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cv.html">CV</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <p>```python {.marimo hide_code=”true” name=”setup”}</p>
+<h1 id="initialization-code-that-runs-before-all-other-cells">Initialization code that runs before all other cells</h1>
+<p>import marimo as mo</p>
+
+<p>import gymnasium as gym
+import numpy as np</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+#Reinforcement Learning Chapter 4: Dynamic Programming
+&lt;!----&gt;
+## Problem Definition
+
+We are using the Gridworld problem for value iteration.
+
+```python {.marimo}
+from gymnasium.envs.toy_text.frozen_lake import generate_random_map
+env = gym.make("FrozenLake-v1", desc=generate_random_map(size=7), is_slippery=True, render_mode="rgb_array")
+n_states = env.observation_space.n
+n_actions = env.action_space.n
+# Display the environment
+env.reset()
+lake = env.render()
+</code></pre></div></div>
+
+<p>```python {.marimo hide_code=”true”}
+import matplotlib.pyplot as plt
+import seaborn as sns
+f, ax = plt.subplots()
+ax.imshow(lake)
+ax.set_title(“Frozen Lake Environment”)
+ax.set_xticks([])
+ax.set_yticks([])
+plt.gca()</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+## Value Iteration
+
+The value iteration algorithm iteratively updates the value function until convergence.
+
+The update rule is: $V(s) = \max_a \sum_{s', r} P(s',r|s,a) [r + \gamma V(s')]$
+
+```python {.marimo}
+class Algorithm: 
+
+    def __init__(self, env, gamma=0.9, epsilon=1e-3, n_iter=1000):
+        self.env = env
+        self.gamma = gamma
+        self.epsilon = epsilon
+        self.n_iter = n_iter
+        self.n_states = env.observation_space.n
+        self.V = np.zeros(env.observation_space.n)
+
+class ValueIteration(Algorithm):
+
+    def __init__(self, env, gamma=0.9, epsilon=1e-3, n_iter=1000):
+        super().__init__(env, gamma, epsilon, n_iter)
+        self.v_archive = []
+        self.pi_archive = []
+
+    def update(self):
+        for state in range(self.n_states):
+            q_values = []
+            actions = range(self.env.action_space.n)
+            for action in actions:
+                q_value = 0
+                for prob, next_state, reward, done in self.env.unwrapped.P[state][action]:
+                    q_value += prob * (reward + self.gamma * self.V[next_state])
+                q_values.append(q_value)
+            self.V[state] = max(q_values)
+
+    def return_policy(self):
+        policy = np.zeros(self.n_states, dtype=int)
+        for state in range(self.n_states):
+            q_values = []
+            actions = range(self.env.action_space.n)
+            for action in actions:
+                q_value = 0
+                for prob, next_state, reward, done in self.env.unwrapped.P[state][action]:
+                    q_value += prob * (reward + self.gamma * self.V[next_state])
+                q_values.append(q_value)
+            policy[state] = np.argmax(q_values)
+        return policy
+
+    def run(self):
+        for i in range(self.n_iter):
+            V_old = self.V.copy()
+            # Archive the value function and policy
+            self.v_archive.append(self.V.copy())
+            self.pi_archive.append(self.return_policy())
+
+            # Update the value function
+            self.update()
+
+            if np.max(np.abs(self.V - V_old)) &lt; self.epsilon:
+                print("Convergence reached at iteration:", i)
+                break
+        return self.V
+</code></pre></div></div>
+
+<p>Let’s run the algorithm.</p>
+
+<p>```python {.marimo}
+algorithm = ValueIteration(env, gamma=0.9, epsilon=1e-3)
+v = algorithm.run()</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+```python {.marimo hide_code="true"}
+archive_length = len(algorithm.v_archive)
+slider = mo.ui.slider(0, archive_length-1, value=archive_length-1, step=1, label="iteration slider")
+</code></pre></div></div>
+
+<p>```python {.marimo hide_code=”true”}
+mo.md(f”””
+Here, we plot the value function of all the states in the Gridworld.</p>
+
+<p>The {slider} allows to view the evolution of the value function over iterations.
+{mo.as_html(plot_all(algorithm, slider.value))}
+We can also visualize the optimal policy derived from the value function.
+“””)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+## Policy Iteration
+
+The policy iteration algorithm alternates between policy evaluation and policy improvement until convergence.
+
+Here is an outline of the algorithm:
+
+**1. Initialization**
+
+Initialize a random policy $\pi$ and a value function $V(s)$.
+
+**2. Policy Evaluation**
+
++ Until convergence under a threshold $\theta$:
+    + For each state $s$:
+        + $V(s) \leftarrow \sum_{s', r} p(s', r | s, \pi(s)) [r + \gamma V(s')]$
+
+**3. Policy Improvement**
+
++ For each state $s$:
+    + $\pi(s) \leftarrow \arg\max_a \sum_{s', r} p(s', r | s, a) [r + \gamma V(s')]$
++ If the policy is stable, stop. Otherwise, go to step 2.
+
+```python {.marimo hide_code="true"}
+class PolicyIteration(Algorithm):
+
+    def __init__(self, env, gamma=0.9, epsilon=1e-3, n_iter=1000):
+        super().__init__(env, gamma, epsilon, n_iter)
+        self.V = np.zeros(env.observation_space.n)
+        self.policy = np.random.choice(env.action_space.n, size=self.n_states)
+        self.v_archive = []
+        self.pi_archive = []
+
+    def policy_evaluation(self):
+        while True:
+            V_old = self.V.copy()
+            for state in range(self.n_states):
+                action = self.policy[state]
+                v_value = 0
+                for prob, next_state, reward, done in self.env.unwrapped.P[state][action]:
+                    v_value += prob * (reward + self.gamma * self.V[next_state])
+                self.V[state] = v_value
+            if np.max(np.abs(self.V - V_old)) &lt; self.epsilon:
+                break
+
+    def policy_improvement(self):
+        policy_stable = True
+        for state in range(self.n_states):
+            old_action = self.policy[state]
+            q_values = []
+            actions = range(self.env.action_space.n)
+            for action in actions:
+                q_value = 0
+                for prob, next_state, reward, done in self.env.unwrapped.P[state][action]:
+                    q_value += prob * (reward + self.gamma * self.V[next_state])
+                q_values.append(q_value)
+            self.policy[state] = np.argmax(q_values)
+            if old_action != self.policy[state]:
+                policy_stable = False
+        return policy_stable
+
+    def run(self):
+        for i in range(self.n_iter):
+            # Archive the value function and policy
+            self.v_archive.append(self.V.copy())
+            self.pi_archive.append(self.policy.copy())
+
+            # Policy Evaluation
+            self.policy_evaluation()
+
+            # Policy Improvement
+            policy_stable = self.policy_improvement()
+
+            if policy_stable:
+                print("Policy converged at iteration:", i)
+                break
+
+        return self.V, self.policy
+</code></pre></div></div>
+
+<p>Let’s run the policy iteration algorithm.</p>
+
+<p>```python {.marimo}
+policy_iteration = PolicyIteration(env, gamma=0.9, epsilon=1e-8)
+v_policy, pi_policy = policy_iteration.run()</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+```python {.marimo hide_code="true"}
+archive_length_pi = len(policy_iteration.v_archive)
+slider_pi = mo.ui.slider(0, archive_length_pi-1, value=archive_length_pi-1, step=1, label="iteration slider")
+</code></pre></div></div>
+
+<p>```python {.marimo hide_code=”true”}
+mo.md(rf”””
+Here, we plot the value function of all the states in the Gridworld.</p>
+
+<p>The {slider_pi} allows to view the evolution of the value function $v_\pi$ and the associated policy $\pi$ over the course of the convergence of the algorithm.
+{mo.as_html(plot_all(policy_iteration, slider_pi.value))}
+“””)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+```python {.marimo hide_code="true"}
+import functools
+from matplotlib.colors import LinearSegmentedColormap
+
+def slice_cmap(cmap, start=0.25, end=0.75, name=None, N=256):
+    if name is None:
+        name = f"{cmap.name}_slice_{start:.2f}_{end:.2f}"
+    x = np.linspace(start, end, N)
+    colors = cmap(x)
+    return LinearSegmentedColormap.from_list(name, colors, N=N)
+
+@functools.cache
+def plot_value_function(algorithm, iteration):
+    v_iter = algorithm.v_archive[iteration]
+    v_array_iter = v_iter.reshape((algorithm.env.unwrapped.nrow, algorithm.env.unwrapped.ncol))
+    return v_array_iter
+
+@functools.cache
+def plot_policy(algorithm, iteration):
+    action_mapping = {
+        0: '←',
+        1: '↓',
+        2: '→',
+        3: '↑',
+    }
+    policy = algorithm.pi_archive[iteration]
+    policy_symbols = [action_mapping[action] for action in policy]
+    policy_array = np.array(policy_symbols).reshape((algorithm.env.unwrapped.nrow, algorithm.env.unwrapped.ncol))
+    #Where there are obstacles, set policy to empty string
+    # Get location of obstacles in env
+    for row in range(env.unwrapped.nrow):
+        for col in range(env.unwrapped.ncol):
+            state = row * env.unwrapped.ncol + col
+            if env.unwrapped.desc[row, col] == b'H':
+                policy_array[row, col] = 'H'
+            if env.unwrapped.desc[row, col] == b'G':
+                policy_array[row, col] = 'G'
+    return policy, policy_array
+
+
+@functools.cache
+def plot_all(algorithm, iteration):
+    n_row = algorithm.env.unwrapped.nrow
+    n_col = algorithm.env.unwrapped.ncol
+    f_main, (ax_value, ax_policy) = plt.subplots(1, 2, figsize=(12, 5))
+    cbar_ax = f_main.add_axes([0.48, 0.1, 0.01, 0.78])
+    v = plot_value_function(algorithm, iteration)
+    p, p_sym = plot_policy(algorithm, iteration)
+    sns.heatmap(v, annot=True, cmap="YlGnBu", cbar=True, ax=ax_value, square=True, cbar_ax=cbar_ax, fmt=".2f")
+    sns.heatmap(p.reshape((n_row, n_col)), annot=p_sym, fmt='', cmap=slice_cmap(plt.get_cmap('Blues'), 0.1, 0.5), 
+                cbar=False, ax=ax_policy, square=True)
+    mask_hole = np.zeros_like(p.reshape((n_row, n_col)), dtype=bool)
+    mask_goal = np.zeros_like(p.reshape((n_row, n_col)), dtype=bool)
+    for row in range(n_row):
+        for col in range(n_col):
+            if env.unwrapped.desc[row, col] == b'H':
+                mask_hole[row, col] = True
+            if env.unwrapped.desc[row, col] == b'G':
+                mask_goal[row, col] = True
+
+    for axis, symbols, format in zip([ax_value, ax_policy], [v, p_sym], ['.2f', '']):
+        axis.set_xticks([])
+        axis.set_yticks([])
+        sns.heatmap(np.ones((n_row, n_col)), mask=~mask_hole, annot=symbols, fmt=format, cmap=["#4a5267"], 
+                    cbar=False, ax=axis, square=True)
+        sns.heatmap(np.ones((n_row, n_col)), mask=~mask_goal, annot=symbols, fmt=format, cmap=["#ffcd00"], 
+                    cbar=False, ax=axis, square=True)
+
+    ax_value.set_title(f"Value Function at Iteration {iteration}")
+    ax_policy.set_title("Optimal Policy")
+    return plt.gca()
+</code></pre></div></div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Noé Lallouet. Hosted on GitHub Pages.</p>
+    </footer>
+</body>
+</html>

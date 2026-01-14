@@ -17,4 +17,5 @@ A novel multi-objective optimisation algorithm based on Monte Carlo search, pres
 ### RL
 
 Re-implementations of classical RL algorithms described by Sutton & Barto in *Reinforcement Learning: an Introduction*
-- [Dynamic programming](projects/ch4-dynamic-programming.html)
+- [Multi-armed Bandits](/projects/ch2-bandits.html)
+- [Dynamic programming](/projects/ch4-dynamic-programming.html)

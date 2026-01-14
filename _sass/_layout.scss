@@ -12,13 +12,13 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.47);
+  background: rgb(242, 241, 229);
   backdrop-filter: blur(9px);
 -webkit-backdrop-filter: blur(9px);
   isolation: isolate;
   overflow: hidden;
   border-bottom: 0px solid rgba(255, 255, 255, 0.04);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
   padding: $spacing-sm 20%;
   margin-bottom: $spacing-xs;
   display: flex;

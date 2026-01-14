@@ -31,11 +31,11 @@ body {
   line-height: $line-height-base;
   color: $text-color;
   background-color: $background-color;
-  background-image: url('/assets/images/Texturelabs_LensFX_172XL.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: screen;
+  //background-image: url('/assets/images/Texturelabs_LensFX_172XL.jpg');
+  //background-attachment: fixed;
+  //background-size: cover;
+  //background-position: center;
+  //background-blend-mode: screen;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 h2 {
