@@ -19,7 +19,7 @@ A novel multi-objective optimisation algorithm based on Monte Carlo search, pres
 Re-implementations of classical RL algorithms described by Sutton & Barto in *Reinforcement Learning: an Introduction*
 - Chapter 2: Multi-armed bandits 
     
-    - [Report](/projects/ch2-bandits.html) · [Interactive notebook](/projects/ch2-bandits.html)
+    - [Report](/projects/ch2-bandits.html) · [Interactive notebook](https://marimo.app/l/nhnvf3)
 
 - Chapter 4: Dynamic Programming
     
