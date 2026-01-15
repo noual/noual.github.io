@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+description: Noé Lallouet - PhD student in AI at LAMSADE, Paris Dauphine - PSL University. Research in multi-objective optimization, combinatorial optimization, and deep learning.
 ---
 
 <div class="home-layout">

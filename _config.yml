@@ -1,9 +1,27 @@
 title: Noé Lallouet
 email: noe.lallouet@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Machine Learning Engineer specialising in Deep Reinforcement Learning.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://noual.github.io" # the base hostname & protocol for your site
+description: >-
+  Noé Lallouet - PhD student in Artificial Intelligence at LAMSADE, Paris Dauphine - PSL University. 
+  Specializing in multi-objective optimization, combinatorial optimization, deep learning, and Monte Carlo search.
+baseurl: ""
+url: "https://noual.github.io"
+
+# Author information for SEO
+author:
+  name: Noé Lallouet
+  email: noe.lallouet@gmail.com
+  
+# Social profiles
+social:
+  name: Noé Lallouet
+  links:
+    - https://github.com/noual
+    - https://linkedin.com/in/noe-lallouet
+
+# SEO settings
+lang: en
+locale: en_US
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

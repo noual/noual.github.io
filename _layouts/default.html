@@ -6,6 +6,30 @@
     <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+    {% seo %}
+    
+    <!-- Structured Data for Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Noé Lallouet",
+      "url": "{{ site.url }}",
+      "image": "{{ site.url }}/assets/images/profile.jpeg",
+      "jobTitle": "PhD Student in Artificial Intelligence",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "LAMSADE, Paris Dauphine - PSL University"
+      },
+      "alumniOf": "Paris Dauphine - PSL University",
+      "email": "noe.lallouet@gmail.com",
+      "sameAs": [
+        "https://github.com/noual",
+        "https://linkedin.com/in/noe-lallouet"
+      ],
+      "knowsAbout": ["Artificial Intelligence", "Multi-objective Optimization", "Combinatorial Optimization", "Deep Learning", "Monte Carlo Search"]
+    }
+    </script>
 </head>
 <body>
     <header>
