@@ -22,7 +22,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: #333333;
-  background-color: hsl(54, 85%, 97%);
+  background-color: hsl(0, 0%, 97%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -80,6 +80,9 @@ ul, ol {
 }
 ul li, ol li {
   margin-bottom: 0.5rem;
+}
+ul ul, ol ul {
+  list-style-type: "- ";
 }
 
 code {
@@ -143,7 +146,7 @@ table tr:hover {
 }
 
 .container {
-  max-width: 960px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -152,7 +155,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgb(242, 241, 229);
+  background: hsl(0, 0%, 90%);
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
   isolation: isolate;
@@ -214,27 +217,136 @@ header nav ul a:hover {
   text-decoration: none;
 }
 
-.profile-photo {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0;
-}
-.profile-photo img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.548);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+.home-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
 }
 
+.home-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+.home-sidebar h2 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+.home-sidebar .title {
+  margin: 0;
+  color: #e35336;
+  font-weight: 500;
+}
+.home-sidebar .affiliation {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(51, 51, 51, 0.8);
+  line-height: 1.4;
+}
+.home-sidebar .social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.home-sidebar .social-links a {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.home-sidebar .social-links a:hover {
+  transform: scale(1.15);
+}
+.home-sidebar .social-links a img {
+  width: 100%;
+  height: 100%;
+  filter: invert(42%) sepia(55%) saturate(2394%) hue-rotate(343deg) brightness(92%) contrast(88%);
+}
+
+.profile-photo {
+  width: 100%;
+  max-width: 200px;
+  margin: 0;
+}
+.profile-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.home-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.home-main .biography h3 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+.home-main .biography p {
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.home-grid section h3 {
+  font-size: 1.75rem;
+  margin-top: 0;
+}
+.home-grid section ul {
+  margin-left: 1.5rem;
+  padding: 0;
+}
+.home-grid section ul li {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.home-grid section .edu-date {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+@media (max-width: 1024px) {
+  .home-layout {
+    grid-template-columns: 240px 1fr;
+    gap: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .home-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+  .home-sidebar {
+    order: -1;
+  }
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+}
 main {
   flex: 1;
   padding: 2rem 1.5rem;
 }
 
 footer {
-  background-color: rgb(20, 20, 19);
+  background-color: hsl(0, 0%, 97%);
   border-top: 0px solid #333333;
   padding: 2rem 1.5rem;
   margin-top: 0.5rem;

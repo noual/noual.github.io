@@ -95,6 +95,10 @@ ul, ol {
   li {
     margin-bottom: $spacing-xs;
   }
+
+  ul {
+    list-style-type: '- ';
+  }
 }
 
 code {

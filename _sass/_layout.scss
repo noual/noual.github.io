@@ -3,7 +3,7 @@
 // ============================================================================
 
 .container {
-  max-width: 960px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 $spacing-md;
 }
@@ -12,7 +12,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgb(242, 241, 229);
+  background: hsl(0, 0%, 90%);
   backdrop-filter: blur(9px);
 -webkit-backdrop-filter: blur(9px);
   isolation: isolate;
@@ -83,18 +83,152 @@ header {
   }
 }
 
-.profile-photo {
+// ============================================================================
+// Home Page Layout
+// ============================================================================
+
+.home-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: $spacing-xl;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-lg $spacing-md;
+}
+
+.home-sidebar {
   display: flex;
-  justify-content: center;
-  margin: $spacing-lg 0;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: $spacing-sm;
+
+  h2 {
+    margin: 0;
+    font-size: 1.75rem;
+  }
+
+  .title {
+    margin: 0;
+    color: $accent-color;
+    font-weight: 500;
+  }
+
+  .affiliation {
+    margin: 0;
+    font-size: 0.95rem;
+    color: rgba($text-color, 0.8);
+    line-height: 1.4;
+  }
+
+  .social-links {
+    display: flex;
+    gap: $spacing-md;
+    margin-top: $spacing-sm;
+
+    a {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.15);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        filter: invert(42%) sepia(55%) saturate(2394%) hue-rotate(343deg) brightness(92%) contrast(88%);
+      }
+    }
+  }
+}
+
+.profile-photo {
+  width: 100%;
+  max-width: 200px;
+  margin: 0;
 
   img {
-    width: 180px;
-    height: 180px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid rgba(255, 255, 255, 0.548);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.home-main {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+
+  .biography {
+    h3 {
+      font-size: 2.5rem;
+      margin-top: 0;
+    }
+
+    p {
+      line-height: 1.4;
+      margin-bottom: $spacing-md;
+      text-align: justify;
+    }
+  }
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-lg;
+
+  section {
+    h3 {
+      font-size: 1.75rem;
+      margin-top: 0;
+    }
+
+    ul {
+      margin-left: $spacing-md;
+      padding: 0;
+
+      li {
+        margin-bottom: $spacing-sm;
+        line-height: 1.5;
+      }
+    }
+      .edu-date {
+        font-size: 0.9rem;
+      font-style: italic;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 1024px) {
+  .home-layout {
+    grid-template-columns: 240px 1fr;
+    gap: $spacing-lg;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-layout {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+    padding: $spacing-md;
+  }
+
+  .home-sidebar {
+    order: -1;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -104,7 +238,7 @@ main {
 }
 
 footer {
-  background-color: rgba(20, 20, 19, 1);
+  background-color: $background-color;
   border-top: 0px solid $border-color;
   padding: $spacing-lg $spacing-md;
   margin-top: $spacing-xs;
