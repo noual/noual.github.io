@@ -38,7 +38,7 @@ permalink: /cv.html
 - February 2020 – January 2022
 - Co-founded a R&D-oriented startup bringing machine learning innovation to the field of indoor boulder climbing.
 - Responsible for the development, training and deployment of state‑of‑the‑art deep learning algorithms in object detection, sequence generation, autoencoding, image generation.
-- Raised $60k pre-seed funding for a $1M valuation.
+- Raised \$60k pre-seed funding for a \$1M valuation.
 
 <hr class="cv-sep">
 
