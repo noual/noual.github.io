@@ -8,7 +8,7 @@ permalink: /projects.html
 
 ### Pareto-NRPA
 
-- A novel multi-objective optimisation algorithm based on Monte Carlo search, presented at ECAI 2025.
+- A novel multi-objective optimization algorithm based on Monte Carlo search, presented at ECAI 2025.
 
     - [Read Paper](https://arxiv.org/abs/2507.19109) · [View Code](https://github.com/pareto-nrpa/pareto-nrpa)
 
