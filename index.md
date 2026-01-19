@@ -40,6 +40,7 @@ description: Noé Lallouet - PhD student in AI at LAMSADE, Paris Dauphine - PSL 
 		  <li>Deep learning</li>
 		  <li>Monte Carlo search</li>
 		  <li>Computer vision</li>
+      <li>Neural architecture search</li>
         </ul>
       </section>
 
