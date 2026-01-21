@@ -357,14 +357,18 @@ footer {
 
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     padding: 1rem 1.5rem;
   }
+  header h1 {
+    font-size: 1.4rem;
+  }
   header nav ul {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1rem;
   }
   h1 {
@@ -382,8 +386,24 @@ footer {
     padding: 0 1rem;
   }
   header {
-    padding: 1.5rem 1rem;
-    margin-bottom: 2rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 1rem;
+    margin-bottom: 1.5rem;
+    gap: 0.5rem;
+  }
+  header h1 {
+    font-size: 1.3rem;
+  }
+  header nav ul {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+  header nav ul a {
+    font-size: 0.9rem;
   }
   main {
     padding: 1.5rem 1rem;
@@ -400,6 +420,35 @@ footer {
   }
   h3 {
     font-size: 1.1rem;
+  }
+  .home-layout {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+  .home-sidebar h2 {
+    font-size: 1.5rem;
+  }
+  .home-sidebar .title {
+    font-size: 0.95rem;
+  }
+  .home-sidebar .affiliation {
+    font-size: 0.85rem;
+  }
+  .profile-photo {
+    max-width: 160px;
+  }
+  .home-main .biography h3 {
+    font-size: 1.75rem;
+  }
+  .home-main .biography p {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .home-grid {
+    gap: 1.5rem;
+  }
+  .home-grid section h3 {
+    font-size: 1.3rem;
   }
 }
 

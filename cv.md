@@ -54,7 +54,7 @@ permalink: /cv.html
 
 ### Winner, Hackmakers Formula AI Hackathon
 ###### *March 2022*
-- Winner of a global three-day hackathon on the subject of weather prediction in Formula One with a prize pool of `$60k+`.
+- Winner of a global three-day hackathon on the subject of weather prediction in Formula One with a prize pool of 60k€+.
 - Placed first out of 140+ teams.
 
 ### Runner‑up, Paris‑Dauphine Startup Challenge

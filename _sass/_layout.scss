@@ -250,16 +250,21 @@ footer {
 // Responsive
 @media (max-width: $tablet) {
   header {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     padding: $spacing-sm $spacing-md;
-  }
 
-  header nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: $spacing-sm;
+    h1 {
+      font-size: 1.4rem;
+    }
+
+    nav ul {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: $spacing-sm;
+    }
   }
 
   h1 {
@@ -281,8 +286,27 @@ footer {
   }
 
   header {
-    padding: $spacing-md $spacing-sm;
-    margin-bottom: $spacing-lg;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: $spacing-sm $spacing-sm;
+    margin-bottom: $spacing-md;
+    gap: $spacing-xs;
+
+    h1 {
+      font-size: 1.3rem;
+    }
+
+    nav ul {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: $spacing-xs $spacing-sm;
+      
+      a {
+        font-size: 0.9rem;
+      }
+    }
   }
 
   main {
@@ -304,5 +328,47 @@ footer {
 
   h3 {
     font-size: 1.1rem;
+  }
+
+  .home-layout {
+    padding: $spacing-sm;
+    gap: $spacing-md;
+  }
+
+  .home-sidebar {
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .title {
+      font-size: 0.95rem;
+    }
+
+    .affiliation {
+      font-size: 0.85rem;
+    }
+  }
+
+  .profile-photo {
+    max-width: 160px;
+  }
+
+  .home-main .biography {
+    h3 {
+      font-size: 1.75rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      text-align: left;
+    }
+  }
+
+  .home-grid {
+    gap: $spacing-md;
+
+    section h3 {
+      font-size: 1.3rem;
+    }
   }
 }
