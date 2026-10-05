@@ -2,6 +2,7 @@
 layout: default
 title: CV
 permalink: /cv.html
+body_class: cv-page
 ---
 ## Education
 
@@ -20,13 +21,21 @@ permalink: /cv.html
 
 <hr class="cv-sep">
 
-## Work Experience
+## Work experience
+### Research Scientist Intern — Adobe Research
+###### *March 2023 – February 2026 — Paris, France*
+- Six-month research internship at the Adobe Research Paris lab, focusing on generative modeling and 3D representation learning for Gaussian splatting interactive applications.
+- Internship topic: *Reference-Free Gaussian Splatting Inpainting with 3D-Native Generative Priors*.
+- Responsible for leading the research project, designing and performing key experiments using large-scale computing infrastructure.
+- Collaboration with UK and US-based research teams.
 
-### PhD AI Research Scientist — Thales, Elancourt, France
+
+### PhD Researcher — Thales, Elancourt, France
 ###### *March 2023 – February 2026*
 - Responsible for investigating resource-efficient neural network design for the problem of airborne radar target detection.
 - Developed solutions for designing efficient convolutional neural networks in resource-constrained contexts for implementation in operational radar systems.
-- Scientific contributions to AI-driven radar signal processing and to multi-objective optimization, illustrated by first-author papers at international conferences.
+- Designed neural radar detectors reducing inference latency by 76% while improving long-range detection probability by 5%, enabling deployment in critical embedded hardware.
+- Scientific contributions to AI-driven radar signal processing and to multi-objective optimisation, illustrated by first-author papers at international conferences.
 
 ### Apprentice AI Radar Engineer — Thales, Elancourt, France
 ###### *September 2021 – September 2022*
@@ -43,6 +52,8 @@ permalink: /cv.html
 <hr class="cv-sep">
 
 ## Publications
+
+- Noé Lallouet, Tristan Cazenave, Cyrille Enderli and Léo Monnier. _Multi-Objective Architecture Search for Real-Time Radar Target Detection on Embedded Systems_. 2026 International Radar Symposium (IRS), IEEE, https://doi.org/10.23919/IRS70539.2026.11549203
 - Noé Lallouet, Tristan Cazenave and Cyrille Enderli. _“Pareto‑NRPA: A Novel Monte‑Carlo Search Algorithm for Multi‑Objective Optimization.”_ ECAI 2025, IOS Press, [https://doi.org/10.3233/faia251394](https://doi.org/10.3233/faia251394).
 - Noé Lallouet, Tristan Cazenave, Cyrille Enderli and Stéphanie Gourdin. _“Searching Efficient Deep Architectures for Radar Target Detection Using Monte‑Carlo Tree Search.”_ 2024 International Radar Conference (RADAR), IEEE, [https://doi.org/10.1109/radar58436.2024.10993743](https://doi.org/10.1109/radar58436.2024.10993743).
 - Noé Lallouet, Tristan Cazenave, Cyrille Enderli and Stéphanie Gourdin. _“Loss Function Design For Training Robust Radar Detectors Using Deep Learning.”_ Conference on Artificial Intelligence for Defense, DGA Maîtrise de l'Information, [https://hal.science/hal-04328554v1](https://hal.science/hal-04328554v1).
@@ -51,6 +62,12 @@ permalink: /cv.html
 <hr class="cv-sep">
 
 ## Projects & Awards
+
+### 4th place, SoccerNet 2026 Challenge
+###### *May 2026*
+
+- International football machine learning challenge on synthesis of novel viewpoints for football matches.
+- 4th place out of 65 teams and 95 submissions.
 
 ### Winner, Hackmakers Formula AI Hackathon
 ###### *March 2022*

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   aria-label="Google Scholar"
+   role="img"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg69"
+   sodipodi:docname="google-scholar-svgrepo-com.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs73">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect241"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Utilise la règle de remplissage « fill-rule: evenodd » de la boîte de dialogue &lt;b&gt;Fond et contour&lt;/b&gt; en l'absence de résultat de mise à plat après une conversion en chemin." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath237">
+      <path
+         fill="#ffffff"
+         d="m 213,111 -107,94 h 69 c 5,45 41,64 78,67 -7,18 -4,27 7,39 -43,1 -103,26 -103,67 4,45 63,54 92,54 38,1 81,-19 90,-54 4,-35 -10,-54 -31,-71 -23,-18 -28,-28 -21,-40 15,-17 35,-27 39,-51 2,-17 -2,-28 -6,-43 l 45,-38 -1,16 c -3,2 -5,6 -5,9 v 103 c 2,13 22,11 23,0 V 160 c 0,-3 -2,-7 -5,-8 v -25 l 16,-16 z m 58,141 c -61,10 -87,-87 -38,-99 56,-11 83,86 38,99 z m -5,73 c 60,13 61,63 10,78 -44,9 -82,-4 -81,-30 0,-25 35,-48 71,-48 z"
+         id="path239"
+         style="display:none" />
+      <path
+         id="lpe_path-effect241"
+         class="powerclip"
+         d="M -5,-5 H 517 V 517 H -5 Z m 218,116 -107,94 h 69 c 5,45 41,64 78,67 -7,18 -4,27 7,39 -43,1 -103,26 -103,67 4,45 63,54 92,54 38,1 81,-19 90,-54 4,-35 -10,-54 -31,-71 -23,-18 -28,-28 -21,-40 15,-17 35,-27 39,-51 2,-17 -2,-28 -6,-43 l 45,-38 -1,16 c -3,2 -5,6 -5,9 v 103 c 2,13 22,11 23,0 V 160 c 0,-3 -2,-7 -5,-8 v -25 l 16,-16 z m 58,141 c 45,-13 18,-110 -38,-99 -49,12 -23,109 38,99 z m -5,73 c -36,0 -71,23 -71,48 -1,26 37,39 81,30 51,-15 50,-65 -10,-78 z" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview71"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.7851562"
+     inkscape:cx="256"
+     inkscape:cy="256"
+     inkscape:window-width="1920"
+     inkscape:window-height="1143"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg69" />
+  <rect
+     width="512"
+     height="512"
+     rx="15%"
+   fill="currentColor"
+     id="rect65"
+     clip-path="url(#clipPath237)"
+     inkscape:path-effect="#path-effect241"
+     d="M 76.800003,0 H 435.2 C 477.7472,0 512,34.252801 512,76.800003 V 435.2 c 0,42.5472 -34.2528,76.8 -76.8,76.8 H 76.800003 C 34.252801,512 0,477.7472 0,435.2 V 76.800003 C 0,34.252801 34.252801,0 76.800003,0 Z" />
+</svg>

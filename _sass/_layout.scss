@@ -12,7 +12,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: hsl(0, 0%, 90%);
+  background: hsla(37, 32%, 92%, 0.83);
   backdrop-filter: blur(9px);
 -webkit-backdrop-filter: blur(9px);
   isolation: isolate;
@@ -71,6 +71,7 @@ header {
       }
 
       a {
+        font-family: $font-family-heading;
         color: $text-color;
         font-weight: 400;
 
@@ -88,10 +89,11 @@ header {
 // ============================================================================
 
 .home-layout {
+  font-family: $font-family-heading;
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: $spacing-xl;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   padding: $spacing-lg $spacing-md;
 }
@@ -169,26 +171,35 @@ header {
 
   .biography {
     h3 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       margin-top: 0;
     }
 
     p {
-      line-height: 1.4;
+      line-height: 1.5;
       margin-bottom: $spacing-md;
       text-align: justify;
+    }
+
+    .intro {
+      font-size: 1rem;
     }
   }
 }
 
+.cv-page main .container {
+  font-family: $font-family-heading;
+  font-size: 1rem;
+}
+
 .home-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: $spacing-lg;
 
   section {
     h3 {
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       margin-top: 0;
     }
 
@@ -198,12 +209,35 @@ header {
 
       li {
         margin-bottom: $spacing-sm;
-        line-height: 1.5;
+        line-height: 1.35;
       }
     }
       .edu-date {
         font-size: 0.9rem;
+        display: inline-block;
+        margin-left: 0.35rem;
       font-style: italic;
+    }
+  }
+}
+
+.interests {
+  > ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $spacing-lg;
+
+    > li {
+      margin-bottom: 0;
+
+      > ul {
+        margin-top: $spacing-xs;
+        margin-bottom: 0;
+
+        li {
+          margin-bottom: 0.25rem;
+        }
+      }
     }
   }
 }
@@ -227,9 +261,6 @@ header {
     order: -1;
   }
 
-  .home-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 main {
@@ -370,5 +401,10 @@ footer {
     section h3 {
       font-size: 1.3rem;
     }
+  }
+
+  .interests > ul {
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
   }
 }

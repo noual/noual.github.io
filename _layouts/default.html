@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="WG564RCfPEj_YixDUUecqg8hc-ubuTroAPKHZqJo5wA" />
-    <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="icon" type="image/png" href="{{ '/assets/thumbnail.png' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
@@ -20,31 +19,43 @@
       };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <script type="module" src="{{ '/assets/js/site.js' | relative_url }}"></script>
     
-    <!-- Structured Data for Person -->
+    <!-- Structured data for this personal profile -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
+      "@type": "ProfilePage",
+      "@id": "{{ site.url }}/#profile",
+      "url": "{{ site.url }}/",
       "name": "Noé Lallouet",
-      "url": "{{ site.url }}",
-      "image": "{{ site.url }}/assets/images/profile.jpeg",
-      "jobTitle": "PhD Student in Artificial Intelligence",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "LAMSADE, Paris Dauphine - PSL University"
-      },
-      "alumniOf": "Paris Dauphine - PSL University",
-      "email": "noe.lallouet@gmail.com",
-      "sameAs": [
-        "https://github.com/noual",
-        "https://linkedin.com/in/noe-lallouet"
-      ],
-      "knowsAbout": ["Artificial Intelligence", "Multi-objective Optimization", "Combinatorial Optimization", "Deep Learning", "Monte Carlo Search"]
+      "mainEntity": {
+        "@type": "Person",
+        "@id": "{{ site.url }}/#person",
+        "name": "Noé Lallouet",
+        "alternateName": "noual",
+        "description": "AI researcher specializing in neural combinatorial optimization, neural architecture search, and 3D representation learning.",
+        "url": "{{ site.url }}/",
+        "image": "{{ site.url }}/assets/images/profile.jpeg",
+        "jobTitle": "PhD Student in Artificial Intelligence",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "LAMSADE, Paris Dauphine - PSL University"
+        },
+        "alumniOf": "Paris Dauphine - PSL University",
+        "email": "noe.lallouet@gmail.com",
+        "sameAs": [
+          "https://github.com/noual",
+          "https://linkedin.com/in/noe-lallouet",
+          "https://scholar.google.com/citations?user=hRBgf6gAAAAJ",
+          "https://dauphine.psl.eu/recherche/cvtheque/lallouet-noe"
+        ],
+        "knowsAbout": ["Artificial Intelligence", "Multi-objective Optimization", "Combinatorial Optimization", "Deep Learning", "Neural Architecture Search", "Computer Vision", "3D Representation Learning"]
+      }
     }
     </script>
 </head>
-<body>
+<body class="{{ page.body_class | default: '' }}">
     <header>
         <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
         <nav>

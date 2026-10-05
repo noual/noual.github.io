@@ -14,6 +14,14 @@ ECAI 2025, IOS Press, [https://doi.org/10.3233/faia251394](https://doi.org/10.32
 
 <hr class="cv-sep">
 
+#### Multi-Objective Architecture Search for Real-Time Radar Target Detection on Embedded Systems
+
+*Noé Lallouet, Tristan Cazenave, Cyrille Enderli and Léo Monnier*
+
+2026 International Radar Symposium (IRS), IEEE, [https://doi.org/10.23919/IRS70539.2026.11549203](https://doi.org/10.23919/IRS70539.2026.11549203)
+
+<hr class="cv-sep">
+
 #### Searching Efficient Deep Architectures for Radar Target Detection Using Monte Carlo Tree Search
 
 *Noé Lallouet, Tristan Cazenave, Cyrille Enderli and Stéphanie Gourdin*

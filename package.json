@@ -1,0 +1,15 @@
+{
+  "name": "website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:js": "esbuild assets/js/main.js --bundle --format=esm --outfile=assets/js/site.js",
+    "watch:js": "esbuild assets/js/main.js --bundle --format=esm --outfile=assets/js/site.js --watch"
+  },
+  "dependencies": {
+    "lettrine": "^0.1.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.9"
+  }
+}

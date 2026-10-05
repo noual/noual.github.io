@@ -1,4 +1,5 @@
 title: Noé Lallouet
+tagline: Homepage
 email: noe.lallouet@gmail.com
 description: >-
   Noé Lallouet - PhD student in Artificial Intelligence at LAMSADE, Paris Dauphine - PSL University. 
@@ -17,6 +18,12 @@ social:
   links:
     - https://github.com/noual
     - https://linkedin.com/in/noe-lallouet
+    - https://scholar.google.com/citations?user=hRBgf6gAAAAJ
+
+exclude:
+  - node_modules
+  - package.json
+  - package-lock.json
 
 # SEO settings
 lang: en
